@@ -1,7 +1,6 @@
 package lab05;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Scanner;
 
 public class ArrayListMenu {
@@ -35,11 +34,7 @@ public class ArrayListMenu {
                 Scanner scannerSearchNumber = new Scanner(System.in);
                 System.out.print("Input the number you want to search: ");
                 int searchNumber = scannerSearchNumber.nextInt();
-                int indexOfSearchNumber = arrayList.indexOf(searchNumber) + 1;
-                if (arrayList.indexOf(searchNumber) == -1) {
-                    System.out.println("==> " + searchNumber + " is not in the array.");
-                } else
-                    System.out.println("==> " + searchNumber + " ở vị trí thứ " + indexOfSearchNumber + " trong mảng.");
+                System.out.println(indexOfNumber(searchNumber, arrayList));
             } else if (selectedNumber != 0) System.out.println("Please choose correct menu!");
         } while (selectedNumber != 0);
     }
@@ -53,7 +48,20 @@ public class ArrayListMenu {
     }
 
     private static Integer minimumOfArrayList(ArrayList<Integer> arrayList) {
-        Collections.sort(arrayList);
-        return arrayList.get(0);
+//        Collections.sort(arrayList);
+//        return arrayList.get(0);
+        int minNumber = arrayList.get(0);
+        for (int index = 0; index < arrayList.size(); index++) {
+            if (arrayList.get(index) < minNumber) minNumber = arrayList.get(index);
+        }
+        return minNumber;
+    }
+
+    private static String indexOfNumber(int searchNumber, ArrayList<Integer> arrayList) {
+        int indexOfSearchNumber = arrayList.indexOf(searchNumber) + 1;
+        if (arrayList.indexOf(searchNumber) == -1) {
+            return ("==> " + searchNumber + " is not in the array.");
+        } else
+            return ("==> " + searchNumber + " ở vị trí thứ " + indexOfSearchNumber + " trong mảng.");
     }
 }
