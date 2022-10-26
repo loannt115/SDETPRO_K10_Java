@@ -16,13 +16,13 @@ public class AnimalTest {
             System.out.println("{object_type = '" + animal.getClass().getSimpleName() + "', speed = '" + animal.speed() + " km/h'}");
         }
 
-//        List<FlyAble> racebleAnimals = new AnimalController().getAnimalRacer(Arrays.asList(dog, eagle, falcon, horse, tiger));
-//        System.out.println("=== List of the raceable animals ===");
-//        for (FlyAble animal : racebleAnimals) {
-//            System.out.println("{object_type = '" + animal.getClass().getSimpleName() + "', isFly = " + animal.flyAble() + "}");
-//        }
+        List racebleAnimals = new AnimalController().getAnimalRacer(Arrays.asList(dog, eagle, falcon, horse, tiger));
+        System.out.println("=== List of the raceable animals ===");
+        for (Object animal : racebleAnimals) {
+            System.out.println("{object_type = '" + animal.getClass().getSimpleName() + "}");
+        }
 
-        List<MoveAble> winnerList = new AnimalController().getWinnerList(animalList);
+        List<MoveAble> winnerList = new AnimalController().getWinnerList(racebleAnimals);
         String winnerListName = new lab12.AnimalController().animalListName(winnerList);
         System.out.println("==> " + winnerListName + " is/are the winner, with speed = "
                 + winnerList.get(0).speed() + " km/h.");
