@@ -2,29 +2,18 @@ package lab15;
 
 import lab_common.BookMenuOption;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class BookManagement {
     public static void main(String[] args) {
-//        Book book1 = new Book("1", "Nhat ky trong tu", "HCM", 1921);
-//        Book book2 = new Book("2", "Tu ay", "Tố Hữu", 1967);
-//
-//        List<Book> toWriteBookList = Arrays.asList(book1, book2);
         String projectLocation = System.getProperty("user.dir");
         String relativeFilePath = "\\src\\lab15\\book.txt";
         String absoluteFilePath = projectLocation.concat(relativeFilePath);
-//
-//        BookFactory.saveBookList(toWriteBookList, absoluteFilePath);
-//
-//        List<Book> convertedBookList = BookFactory.convertDataIntoList(absoluteFilePath);
-//        System.out.println(convertedBookList);
+
         List<Book> currentBookList = BookFactory.convertDataIntoList(absoluteFilePath);
 
         boolean isContinuing = true;
         while (isContinuing) {
-//            List<Book> currentBookList = BookFactory.convertDataIntoList(absoluteFilePath);
             BookMenuOption.printMenuOption();
             int selectedOption = BookMenuOption.selectAMenuOption();
             switch (selectedOption) {
