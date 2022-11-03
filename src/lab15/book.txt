@@ -1,0 +1,7 @@
+001;Việt Bắc;Tố Hữu;1954
+002;Lão Hạc;Nam Cao;1943
+003;Chí Phèo;Nam Cao;1941
+004;Từ ấy;Tố Hữu;1943
+005;Số đỏ;Vũ Trọng Phụng;1936
+007;Vỡ đê;Vũ Trọng Phụng;1943
+008;Dế Mèn phiêu lưu ký;Tô Hoài;1941
