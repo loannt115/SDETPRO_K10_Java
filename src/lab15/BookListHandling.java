@@ -79,11 +79,15 @@ public class BookListHandling {
     }
 
     public static void printBookList(List<Book> bookList){
-        for (Book book : bookList) {
-            System.out.println("Book " + (bookList.indexOf(book) + 1) + ": " + book.getTitle());
-            System.out.println("    ISBN: " + book.getISBN());
-            System.out.println("    Author: " + book.getAuthor());
-            System.out.println("    Year: " + book.getYear() + "\n");
+        if (bookList.isEmpty()){
+            System.out.println("The book list is empty!");
+        } else {
+            for (Book book : bookList) {
+                System.out.println("Book " + (bookList.indexOf(book) + 1) + ": " + book.getTitle());
+                System.out.println("    ISBN: " + book.getISBN());
+                System.out.println("    Author: " + book.getAuthor());
+                System.out.println("    Year: " + book.getYear() + "\n");
+            }
         }
     }
 }
