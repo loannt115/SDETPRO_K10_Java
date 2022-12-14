@@ -34,9 +34,9 @@ public class CalculateBMI {
                     adjusted_weight_min = expected_weight_min - weight;
                     adjusted_weight_max = expected_weight_max - weight;
                     System.out.println("You should gain from " + adjusted_weight_min + " to " + adjusted_weight_max + " (kg)!");
-                } else if (BMIScore >= UNDERWEIGHT_THRESHOLD && BMIScore < NORMAL_THRESHOLD && height > 0 && weight > 0) {
+                } else if (BMIScore < NORMAL_THRESHOLD && height > 0 && weight > 0) {
                     System.out.println("You are Normal weight!");
-                } else if (BMIScore >= NORMAL_THRESHOLD && BMIScore < OVER_WEIGHT_THRESHOLD && height > 0 && weight > 0) {
+                } else if (BMIScore < OVER_WEIGHT_THRESHOLD && height > 0 && weight > 0) {
                     System.out.println("You are Overweight!");
                     adjusted_weight_min = weight - expected_weight_max;
                     adjusted_weight_max = weight - expected_weight_min;
